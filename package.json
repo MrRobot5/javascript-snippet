@@ -1,22 +1,18 @@
 {
   "name": "javascript-snippet",
   "version": "1.0.0",
+  "private": true,
   "description": "前端相关的一些常用工具example , 代码片段",
-  "main": "app.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MrRobot5/javascript-snippet.git"
-  },
-  "author": "mrrobot5",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MrRobot5/javascript-snippet/issues"
-  },
-  "homepage": "https://github.com/MrRobot5/javascript-snippet#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
   }
 }
