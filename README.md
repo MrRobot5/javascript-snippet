@@ -1,8 +1,16 @@
 # javascript-snippet
 
-> 前端相关的一些常用工具example , 代码片段
+> 收集前端相关的一些常用工具 example 、代码片段等。
 
-## Getting started
+## Usage
+
+1.  VS Code NPM Scripts 启动 start 命令（package.json）
+
+2.  浏览器访问 http://localhost:3000/
+
+## 工程搭建
+
+> 使用 nodeJs 作为后端服务，方便模拟请求交互。
 
 ### ①简单模式
 

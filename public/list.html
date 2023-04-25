@@ -1,0 +1,40 @@
+<head>
+    <title>Book Notes Application - Subjects</title>
+    <!--Include JQuery Library -->
+    <script src="/javascripts/jquery-3.1.1.js"></script>
+    <script>
+        $(function(){
+            $('#choose_subject').submit(function () {
+                var subject_id = $("#subject_id").val();
+                $.getJSON("/example/subject_ajax?subject_id=" + subject_id, function(data) {
+                    console.log(data);
+                    $.each(data.chapters, function (index, chapter) {
+                        $('#books').append('<tr><td>' + chapter.title + '</td><td>' + chapter.summary + '</td></tr>');
+                    })
+                });
+                return false;
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <p>readme: 通过 jquery ajax 异步加载数据，动态调整html 内容</p>
+    <!-- CHOOSE SUBJECT -->
+    <FORM id="choose_subject" name="choose_subject" method="POST">
+        Choose a Subject:
+        <select name="subject_id" id="subject_id">
+            <option value="magazine">magazine</option>
+            <option value="schoolbook">schoolbook</option>
+            <option value="novel">novel</option>
+            <option value="dictionary">dictionary</option>
+        </select><input type="submit" name="sub" value="Choose Subject"/>
+        <BR />
+    </FORM>
+    <table id="books" border="1">
+        <tr>
+            <th>Chapter</th>
+            <th>Summary</th>
+        </tr>
+    </table>
+</body>
