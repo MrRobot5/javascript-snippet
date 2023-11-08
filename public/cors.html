@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CORS</title>
+<!--Include JQuery Library -->
+<script src="/javascripts/jquery-3.1.1.js"></script>
+<script>
+    $(() => {
+        $("#test").click(function (ev) {
+            var url = "http://webapp.jd.com:8080/projectEnum/warehouseEnum";
+            $.ajax({
+                type: "POST",
+                // 如果指定 application/json 类型的请求，属于非简单请求，发生跨域预检
+                contentType: 'application/json',
+                dataType: 'json',
+                url: url,
+                success: function (data) {
+                    // Ajax call completed successfully
+                    alert("Form Submited Successfully");
+                },
+                error: function (data) {
+                    // Some error in ajax call
+                    alert("some Error");
+                }
+            });
+        });
+    });
+</script>
+</head>
+<body >
+    <h3>CORS</h3>
+    准备工作
+    <ol>
+        <li>使用 SwitchHost 修改本地 localhost ldms.foo.com webapp.foo.com</li>
+        <li>本地环境启动 web 应用A（ldms.foo.com:3000） 本应用</li>
+        <li>本地环境启动 web 应用B（webapp.foo.com:8080） SpringBoot Web 应用</li>
+        <li>在 web 应用A里通过 Ajax 请求应用 B 域名的接口（webapp.foo.com:8080/projectEnum/warehouseEnum）</li>
+        <li>默认情况下，就会出现跨域问题。</li>
+    </ol>
+    <button id="test">调用其他域名服务</button>
+</body>
+</html>
