@@ -1,6 +1,7 @@
 # javascript-snippet
 
-> 收集前端相关的一些常用工具 example 、代码片段等。
+> 收集前端相关的一些常用工具 example 、代码片段（snippet 目录）等。
+> 使用场景： 前端页面开发常用功能、 篡改猴 (Tampermonkey) 脚本提效
 
 ## Usage
 
