@@ -28,6 +28,7 @@ for (var i = 0; i < rows.length; i++) {
         // 如果时间差大于8小时
         if (diff > 8) {
             // 高亮显示这一行
+            // rows[i].style.border = '2px solid red';
             rows[i].style.backgroundColor = 'yellow';
         }
     }
